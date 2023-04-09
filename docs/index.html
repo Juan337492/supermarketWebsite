@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Welcome to La Capital Supermarket - your ultimate destination for all your Mexican grocery needs. We offer an unparalleled selection of fresh meats, authentic Mexican groceries, and various liquor options. With our convenient money transfer services, you can handle all your financial needs in one place. Visit us today to experience the best of Mexican cuisine and culture.">
+  <meta name="keywords"
+    content="La Capital Supermarket, Mexican grocery, fresh meats, liquor, money transfer, authentic Mexican, groceries, cuisine">
+  <meta name="author" content="La Capital Supermarket">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.lacapitalsupermarket.com/index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link href="/dist/output.css" rel="stylesheet">
+  <title>La Capital Supermarket</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/9.19.1/firebase-app-compat.js"></script>
+
+</head>
+
+<body>
+
+  <header class="bg-white">
+    <nav class="flex justify-between items-center w-[92%] mx-auto">
+      <div>
+        <img class="w-full max-w-[200px] h-auto" src="../assets/LogoPurple.png" alt="logo">
+      </div>
+      <div
+        class="nav-links z-10 duration-500 md:static absolute md:min-h-fit bg-white min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 py-2 round">
+        <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+          <li>
+            <a class="hover:text-gray-500" href="#us">Why Choose Us</a>
+          </li>
+          <li>
+            <a class="hover:text-gray-500" href="#dep">Departments</a>
+          </li>
+          <li>
+            <a class="hover:text-gray-500" href="#services">Services</a>
+          </li>
+          <li>
+            <a class="hover:text-gray-500" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex items-center gap-6">
+        <ion-icon name="logo-instagram"></ion-icon>
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-tiktok"></ion-icon>
+        <ion-icon name="menu" onclick="onToggleMenu(this)" class="text-3xl cursor-pointer md:hidden z-20"></ion-icon>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Add your website's main content here -->
+    <div class="relative">
+      <img src="../assets/spiceShade.png" alt="row of chili spices." class="w-full h-auto">
+      <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
+        <h1 class="text-white font-Raleway text-center p-5 text-sm md:text-base lg:text-lg xl:text-3xl">
+          La Capital Supermarket is your ultimate destination for fresh produce, meats, and more.
+        </h1>
+        <button class="rounded-full border border-white text-white py-2 px-4 transition-all duration-300 ease-in-out mt-5 hover:bg-white hover:text-black" onclick="loadPage()">Español</button>
+      </div>
+    </div>
+  </main>
+
+  <section class="bg-gray-100 pb-10 pt-10 flex flex-col lg:flex-row">
+    <img id="us" class="w-3/4 md:w-1/2 lg:w-1/2 xl:w-3/4 h-auto shadow-xl mx-auto lg:ml-60" src="../assets/engBannerVeg.png"
+      alt="Freshness You Can Taste. We're proud to offer a wide variety of fresh produce sourced from local farmers and carefully selected to ensure the highest quality. We carry everything you need to make healthy and delicious meals for you and your family." />
+    <div class="lg:self-center">
+      <p class="px-12 py-5 lg:px-40 text-sm md:text-lg lg:text-xl xl:text-xl">Our commitment to freshness
+        extends beyond just our produce selection. We carefully curate all of our products to ensure that everything you
+        find at our store is of the highest quality.</p>
+    </div>
+  </section>
+
+  <section class="bg-cover bg-center py-16" style="background-image: url(../assets/bgcream.jpg);">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl xl:text-5xl text-center font-semibold mb-10">Departments</h2>
+      <div class="flex flex-wrap justify-center">
+        <img id="dep" class="w-3/4 md:w-1/3 lg:w-1/3 xl:w-1/5 mb-4 md:mb-0 px-2" src="../assets/engBannerDep.png"
+          alt="With our commitment to freshness and quality, you can trust that every item you select from our produce department will burst with flavor and nutrients you can taste.">
+        <img class="w-3/4 md:w-1/3 lg:w-1/3 xl:w-1/5 mb-4 md:mb-0 px-2" src="../assets/engButchery.png"
+          alt="Our expert butchers carefully select the finest cuts of meat from trusted suppliers, then cut and prepare them in-house to ensure the highest freshness and quality.">
+        </div>
+    </div>
+  </section>
+
+  <section id="contact">
+
+  </section>
+  <footer>
+    <div id="storeInfo">
+
+    </div>
+    <!-- Add your website's footer content here -->
+  </footer>
+
+  <!-- Add any necessary JavaScript files here -->
+
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    const navLinks = document.querySelector('.nav-links')
+    const menuIcon = document.querySelector('ion-icon[name="menu"]')
+
+    function onToggleMenu() {
+      navLinks.classList.toggle('top-[-9%]')
+      menuIcon.name = menuIcon.name === 'menu' ? 'close' : 'menu'
+    }
+
+    const links = document.querySelectorAll('.nav-links a')
+    for (const link of links) {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('top-[-9%]')
+        menuIcon.name = 'menu'
+      })
+    }
+
+    function loadPage() {
+  window.location.href = "spanish.html";
+}
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
